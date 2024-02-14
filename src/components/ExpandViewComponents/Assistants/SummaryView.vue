@@ -1,6 +1,6 @@
 <template>
     <div class="h-100">
-        <SummmaryHeader/>
+        <SummmaryHeader @switchEditView="switchEditView"/>
         <SummmaryCards @configureAssistant="configureAssistant"/>
     </div>
 </template>
@@ -28,6 +28,9 @@ export default {
 
   },
   methods:{
+    switchEditView(params){
+      this.$emit('switchEditView',params);
+    },
         configureAssistant(params){
             this.$emit('configureAssistant', params);
         }

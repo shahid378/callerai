@@ -1,15 +1,15 @@
 <template>
     <div class="h-100">
       <div class="h-100" v-if="createFlag">
-        <EditAssitant/>
+        <EditAssitant @switchEditView="switchEditView"/>
       </div>
       <div class="h-100" v-else>
-        <SummaryView @configureAssistant="configureAssistant"/>
+        <SummaryView @configureAssistant="configureAssistant"  @switchEditView="configureAssistant({})"/>
       </div>
     </div>
 </template>
 <script>
-import EditAssitant from './EditAssitant.vue';
+import EditAssitant from './CreateEditAssistants/EditAssitant.vue';
 import SummaryView from './SummaryView.vue';
 export default {
   name: 'AssistanceSummary',
@@ -40,6 +40,9 @@ export default {
 
   },
   methods:{
+    switchEditView(){
+      this.createFlag = false;
+    },
     configureAssistant(params){
       this.createFlag = true;
       console.log(params)

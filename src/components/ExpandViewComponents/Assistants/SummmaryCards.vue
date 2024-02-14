@@ -84,19 +84,6 @@ export default {
 }
 </script>
 <style lang="scss">
-$base_ten : .63rem;
-.m-t-b-5{
-   margin:  .5*$base_ten 0px
-}
-.h-92{
-    height: 92%;
-}
-.el-card__header, .el-card__footer{
-    max-height: 7 * $base_ten;
-}
-.el-card__header, .el-card__footer, .el-card__body{
-    padding: 1 *$base_ten 1.5 * $base_ten
-}
 .assistant-card-container{
     max-height: 92%;
     overflow-y: auto;

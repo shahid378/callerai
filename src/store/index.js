@@ -1,9 +1,11 @@
 import { createStore } from 'vuex';
 import menuStore from './menuStore';
+import plansStore from './plansStore';
 
 export default createStore({
   modules: {
-    menuStore
+    menuStore,
+    plansStore
   },
   state: {
   },

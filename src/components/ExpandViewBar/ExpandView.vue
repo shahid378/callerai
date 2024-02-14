@@ -48,8 +48,6 @@ export default {
 }
 </script>
 <style lang="scss">
-$base_ten : .63rem;
-
 .expand-view-main-container{
     height: 85%;
     padding: 1.5* $base_ten;

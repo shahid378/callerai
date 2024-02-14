@@ -53,24 +53,6 @@ export default {
 }
 </script>
 <style lang="scss">
-$base_ten : .63rem;
-.el-breadcrumb__inner{
-    font-size: 1.8 * $base_ten;
-}
-.pd-r-15 {
-    padding-right: 1.5 * $base_ten;
-}
-
-.pd-l-15 {
-    padding-left: 1.5 * $base_ten;
-}
-
-.disp-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .header-container {
     height: 10%;
     border-bottom: 1px solid rgb(237 221 221);

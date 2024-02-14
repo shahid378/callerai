@@ -17,6 +17,9 @@ export default {
   name: 'LandingPage',
   components:{
     MenuComponent, ExpandViewComponent
+  },
+  mounted(){
+    this.$store.dispatch('getPlansData');
   }
 }
 </script>
