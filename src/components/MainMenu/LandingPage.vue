@@ -20,6 +20,8 @@ export default {
   },
   mounted(){
     this.$store.dispatch('getPlansData');
+    this.$store.dispatch('getTextPlansData');
+    this.$store.dispatch('getAPIsDataForUser');
   }
 }
 </script>

@@ -1,9 +1,9 @@
 <template>
-  <div class="edit-one-container h-100">
+  <div class="h-100">
     <el-card class="box-card  h-100 editone-view-card">
       <template #header>
         <div class="card-header">
-          <div class="display-bw">
+          <div class="disp-bw">
             <div class="disp-col-wise">
               <h3>Create your prompt</h3>
               <span>A well-designed prompt will allow the AI to better interpret and respond appropriately, <a
@@ -52,7 +52,7 @@
         <div class="card-body-assitant-prompt-config">
 
           <div class="disp-col-wise m-r-10 m-b-10">
-            <div class="display-bw pd-b-10">
+            <div class="disp-bw pd-b-10">
               <div class="disp-col-wise">
                 <div class="font-600">2. Write your prompt</div>
                 <div><a href="https://developer.mozilla.org/en-US/">Prompting Guidelines</a></div>
@@ -69,7 +69,7 @@
         </div>
       </div>
       <template #footer>
-        <div class="display-bw">
+        <div class="disp-bw">
           <div class="disp-flex">
             <div class="disp-col-wise">
               <h4>2 steps remaining</h4>

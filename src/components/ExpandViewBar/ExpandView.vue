@@ -3,13 +3,13 @@
         <div class="h-100" v-if="expandView.dispAssistance">
             <AssistanceSummary/>
         </div>
-        <div v-if="expandView.dispAPIKeys">
+        <div class="h-100" v-if="expandView.dispAPIKeys">
             <APIKeysSummary/>
         </div>
-        <div v-if="expandView.dispSettings">
+        <div class="h-100" v-if="expandView.dispSettings">
             <SettingsSummary/>
         </div>
-        <div v-if="expandView.dispAffiliate">
+        <div class="h-100" v-if="expandView.dispAffiliate">
             <AffiliateSummary/>
         </div>
     </div>

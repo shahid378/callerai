@@ -1,9 +1,9 @@
 <template>
-    <div class="edit-one-container h-100">
+    <div class="h-100">
         <el-card class="box-card  h-100 editone-view-card">
             <template #header>
                 <div class="card-header">
-                    <div class="display-bw">
+                    <div class="disp-bw">
                         <div class="disp-col-wise">
                             <h3>Configure</h3>
                             <span>The first step is to customize your assistant according to your needs</span>
@@ -30,7 +30,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="display-bw">
+                    <div class="disp-bw">
 
                         <div class="disp-col-wise w-100 m-r-5">
                             <div class="font-600">Name</div>
@@ -56,7 +56,7 @@
                 <el-divider />
                 <div class="card-body-assitant-ai-config">
 
-                    <div class="display-bw m-b-10">
+                    <div class="disp-bw m-b-10">
 
                         <div class="disp-col-wise w-100 m-r-5">
                             <div class="font-600">AI Model</div>
@@ -75,7 +75,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="display-bw m-b-10">
+                    <div class="disp-bw m-b-10">
                         <div class="disp-col-wise w-100 m-r-5">
                             <div class="font-600">Language
                             </div>
@@ -95,7 +95,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="display-bw">
+                    <div class="disp-bw">
                         <div class="disp-col-wise w-100 m-r-5 border">
                             <div class="m-l-5 font-600">Enable recordings
                             </div>
@@ -110,7 +110,7 @@
                 </div>
             </div>
             <template #footer>
-                <div class="display-bw">
+                <div class="disp-bw">
                     <div class="disp-flex">
                         <div class="disp-col-wise">
                             <h4>3 steps remaining</h4>

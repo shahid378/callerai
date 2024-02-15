@@ -1,6 +1,6 @@
 <template>
   <div class="h-8">
-    <div class="display-bw pd-t-10 pd-b-20">        
+    <div class="disp-bw pd-t-10 pd-b-20">        
       <el-input v-model="searchStr" class="w-50 m-2" placeholder="Search Assistant">
         <template #prefix>
           <el-icon class="el-input__icon"><search /></el-icon>

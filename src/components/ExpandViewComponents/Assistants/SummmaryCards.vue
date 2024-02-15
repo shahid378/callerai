@@ -3,7 +3,7 @@
         <el-card class="box-card assistant-card" v-for="card in assistantsCards" :key="card.id">
             <template #header>
                 <div class="card-header">
-                    <div class="display-bw">
+                    <div class="disp-bw">
                         <el-button type="primary" icon="PhoneFilled" circle />
                         <el-button class="button-new-tag" size="small">
                             Voice<el-icon class="el-icon--right">
@@ -18,7 +18,7 @@
             <div  class="m-t-b-5">{{ card.assistantType }}</div>
             <div  class="m-t-b-5">{{ 'Created ' }}{{ card.assistantCreationDate }}</div>
             <template #footer>
-                <div class="display-bw">
+                <div class="disp-bw">
                     <el-button type="danger" icon="Delete" circle />
                     <el-button @click="configureAssistant(card)">Open</el-button>
                 </div>

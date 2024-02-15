@@ -5,8 +5,14 @@
 .pd-30{
     padding: 3*$base_ten;
 }
+.pd-15{
+    padding: 1.5*$base_ten;
+}
 .pd-20{
     padding: 2*$base_ten;
+}
+.pd-25{
+    padding: 2.5*$base_ten;
 }
 .pd-r-15 {
     padding-right: 1.5 * $base_ten;
@@ -31,7 +37,9 @@
 .pd-t-b-5{
     padding: .5*$base_ten 0px;
 }
-
+.pd-r-l-60{
+    padding: 0px 6*$base_ten;
+}
 .m-10{
     margin: 1*$base_ten 
 
@@ -45,11 +53,23 @@
 .m-b-20{
     margin-bottom: 2 *$base_ten;
 }
+.m-b-25{
+    margin-bottom: 2.5 *$base_ten;
+}
+.m-t-10{
+    margin-top: 1*$base_ten;
+}
+.m-t-25{
+    margin-top: 2.5*$base_ten;
+}
 .m-t-b-5 {
     margin: .5*$base_ten 0px
 }
 .m-t-b-10 {
     margin: 1*$base_ten 0px
+}
+.m-t-b-15{
+    margin: 1.5 *$base_ten 0px;    
 }
 .m-t-b-25{
     margin: 2.5 *$base_ten 0px;
@@ -79,6 +99,10 @@
 .h-92 {
     height: 92%;
 }
+.h-90{
+    height: 92%;
+
+}
 .h-8 {
     height: 8%;
 }
@@ -88,10 +112,13 @@
 .w-100{
     width: 100%;
 }
+.disp-block{
+    display: block;
+}
 .place-end{
     place-content: end;
 }
-.display-bw {
+.disp-bw {
     display: flex;
     justify-content: space-between;
 }
