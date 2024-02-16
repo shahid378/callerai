@@ -4,7 +4,7 @@
             <template #header>
                 <div class="card-header">
                     <div class="disp-bw">
-                        <el-button type="primary" icon="PhoneFilled" circle />
+                        <el-button type="primary" icon="PhoneFilled" circle @click="openCallFeature(card.id)" />
                         <el-button class="button-new-tag" size="small">
                             Voice<el-icon class="el-icon--right">
                                 <Microphone />
@@ -29,15 +29,6 @@
 <script>
 export default {
     name: 'SummmaryCards',
-    components: {
-
-    },
-    data() {
-        return {
-
-        }
-    },
-    props: [],
     computed: {
         assistantsCards() {
             let assistantArr = [{
@@ -69,15 +60,12 @@ export default {
             return assistantArr
         }
     },
-    created() {
-
-    },
-    mounted() {
-
-    },
     methods: {
         configureAssistant(params){
             this.$emit('configureAssistant', params);
+        },        
+        openCallFeature(callerId){                
+            this.$store.dispatch("openDrawer", {'openDrawer':true,"callerAsistantId":callerId, "drawerName": 'callDrawer'});
         }
     },
 

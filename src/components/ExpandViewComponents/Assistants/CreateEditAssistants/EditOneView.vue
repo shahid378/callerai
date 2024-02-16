@@ -130,24 +130,6 @@
 <script>
 export default {
     name: 'EditOneView',
-    components: {
-
-    },
-    data() {
-        return {
-
-        }
-    },
-    props: [],
-    computed: {
-
-    },
-    created() {
-
-    },
-    mounted() {
-
-    },
     methods: {
         switchEditView(params) {
             this.$emit('switchEditView', params)

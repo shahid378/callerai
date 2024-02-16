@@ -20,6 +20,11 @@ export default {
         },
         breadcrumbArr: [],
         updateAppVar:1,
+        
+        openDrawer:false,
+        drawerName:'',
+        callerAsistantId:'',
+        activeSettings:''
     },
     getters:{
         getExpandViewTab(state){
@@ -31,6 +36,12 @@ export default {
         getUpdateAppVar(state){
             return state.updateAppVar;
         },
+        isDrawerActive(state){
+            return state.openDrawer;
+        },
+        getDrawerName(state){
+            return state.drawerName
+        }
     },
     mutations:{
         setExpandView(state,params){
@@ -46,11 +57,27 @@ export default {
         }
     },
     actions:{
-        changeExpandView({commit},params){
+        changeExpandView({state,commit},params){
             commit('setExpandView',params);
+            if(params === 'settings'){
+                state.activeSettings = 'workspace'
+            }
         },
         updateAppVar({state}){
             state.updateAppVar++
+        },
+        openDrawer({state},params){
+            if(params.openDrawer){
+                state.openDrawer = true;
+                state.drawerName = params.drawerName;
+                state.callerAsistantId = params.callerAsistantId;
+            }
+            else{
+                state.openDrawer = false;
+                state.drawerName = '';
+                state.callerAsistantId = '';
+
+            }
         }
     }
 }

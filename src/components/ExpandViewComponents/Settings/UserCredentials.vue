@@ -28,30 +28,11 @@
 <script>
 export default {
   name: 'UserCredentials',
-  components: {
-    
-  },
   data(){
     return{
       loginMail:'',
       loginPassword:''
     }
   },
-  props:[],
-  computed:{
-
-  },
-  created(){
-
-  },
-  mounted(){
-
-  },
-  methods:{
-
-  },
-
 }
 </script>
-<style>
-</style>

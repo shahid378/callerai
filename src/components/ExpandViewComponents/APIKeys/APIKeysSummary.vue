@@ -179,9 +179,6 @@
 <script>
 export default {
   name: 'APIKeysSummary',
-  components: {
-    
-  },
   data(){
     return{
       openAIFlag:false,
@@ -191,22 +188,11 @@ export default {
       anthropicMsg:'Please keep your API token secure, as it gives you access to your account and the associated resources. If you believe your token has been compromised, please reset it.',
     }
   },
-  props:[],
   computed:{
     getAPIData(){
       return this.$store.getters.getAPIData;
     }
   },
-  created(){
-
-  },
-  mounted(){
-
-  },
-  methods:{
-
-  },
-
 }
 </script>
 <style>

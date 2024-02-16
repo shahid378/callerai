@@ -29,16 +29,6 @@ export default {
             }
         }
     },
-    props: [],
-    computed: {
-
-    },
-    created() {
-
-    },
-    mounted() {
-
-    },
     methods: {
         switchEditView(params){
             this.editViewsObj.editOne=false;
@@ -62,4 +52,3 @@ export default {
 
 }
 </script>
-<style></style>

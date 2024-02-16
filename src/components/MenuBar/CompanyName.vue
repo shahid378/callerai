@@ -6,23 +6,10 @@
 <script>
 export default {
   name: 'CompanyName',
-  components: {
-    
-  },
   data(){
     return{
-        companyName: 'CallerAI'
+      companyName:'CallerAi'
     }
-  },
-  props:[],
-  computed:{
-
-  },
-  created(){
-
-  },
-  mounted(){
-
   },
   methods:{
     refreshApp(){

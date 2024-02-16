@@ -19,22 +19,10 @@ export default {
     MainMenu,
     WorkspaceMenu,
   },
-  data(){
-    return{
-
-    }
-  },
-  props:[],
   computed:{
     updateAppVar(){
       return this.$store.getters.getUpdateAppVar;
     }
-  },
-  created(){
-
-  },
-  mounted(){
-
   },
   methods:{
     refreshApp(){

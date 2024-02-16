@@ -91,15 +91,6 @@
 <script>
 export default {
   name: 'VoicePlans',
-  components: {
-    
-  },
-  data(){
-    return{
-
-    }
-  },
-  props:[],
   computed:{
     getMonthlyPlanCards(){
       return this.$store.getters.getMonthlyPlanCards;
@@ -107,19 +98,7 @@ export default {
     getYearlyPlanCards(){
       return this.$store.getters.getYearlyPlanCards;
     },
-
-  },
-  created(){
-
-  },
-  mounted(){
-
-  },
-  methods:{
-
   },
 
 }
 </script>
-<style>
-</style>

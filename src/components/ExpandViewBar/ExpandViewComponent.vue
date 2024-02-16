@@ -1,5 +1,5 @@
 <template>
-    <div class="expand-view-container">
+    <div class="h-100">
         <HeaderComponent/>
         <ExpandView/>
     </div>
@@ -13,29 +13,5 @@ export default {
     ExpandView,
     HeaderComponent
   },
-  data(){
-    return{
-
-    }
-  },
-  props:[],
-  computed:{
-
-  },
-  created(){
-
-  },
-  mounted(){
-
-  },
-  methods:{
-
-  },
-
 }
 </script>
-<style>
-.expand-view-container{
-    height: 100%;
-}
-</style>

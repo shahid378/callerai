@@ -22,25 +22,10 @@
 <script>
 export default {
     name: 'HeaderComponent',
-    components: {
-
-    },
-    data() {
-        return {
-
-        }
-    },
-    props: [],
     computed: {
         breadcrumbArr() {
             return this.$store.getters.getBreadcrumbArr;
         }
-    },
-    created() {
-
-    },
-    mounted() {
-
     },
     methods: {
         openUpdates() {

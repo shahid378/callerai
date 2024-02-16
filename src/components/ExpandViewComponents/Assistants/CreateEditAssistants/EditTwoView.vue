@@ -93,31 +93,16 @@
 <script>
 export default {
   name: 'EditTwoView',
-  components: {
-
-  },
   data() {
     return {
       prompt: ''
     }
   },
-  props: [],
-  computed: {
-
-  },
-  created() {
-
-  },
-  mounted() {
-
-  },
   methods: {
     switchEditView(params) {
       this.$emit('switchEditView', params);
     }
-
   },
 
 }
 </script>
-<style lang="scss"></style>

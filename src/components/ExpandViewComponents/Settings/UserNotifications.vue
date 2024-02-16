@@ -16,29 +16,11 @@
 <script>
 export default {
   name: 'UserNotifications',
-  components: {
-
-  },
   data() {
     return {
       emailNotification: false,
       smsNotification: false
     }
   },
-  props: [],
-  computed: {
-
-  },
-  created() {
-
-  },
-  mounted() {
-
-  },
-  methods: {
-
-  },
-
 }
 </script>
-<style></style>

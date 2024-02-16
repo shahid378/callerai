@@ -12,9 +12,13 @@
         <div class="h-100" v-if="expandView.dispAffiliate">
             <AffiliateSummary/>
         </div>
+        <div class="h-100" v-if="isDrawerActive">
+          <RightDrawerMain/>
+        </div>
     </div>
 </template>
 <script>
+import RightDrawerMain from '../ExpandViewComponents/RightDrawer/RightDrawerMain';
 import APIKeysSummary from '../ExpandViewComponents/APIKeys/APIKeysSummary';
 import AssistanceSummary from '../ExpandViewComponents/Assistants/AssistanceSummary';
 import SettingsSummary from '../ExpandViewComponents/Settings/SettingsSummary';
@@ -22,29 +26,17 @@ import AffiliateSummary from '../ExpandViewComponents/Affiliate/AffiliateSummary
 export default {
   name: 'ExpandView',
   components: {
-    AssistanceSummary,APIKeysSummary,SettingsSummary, AffiliateSummary
+    AssistanceSummary,APIKeysSummary,SettingsSummary, AffiliateSummary,RightDrawerMain
   },
-  data(){
-    return{
-
-    }
-  },
-  props:[],
   computed:{
     expandView(){
         return this.$store.getters.getExpandViewTab;
+    },
+    
+    isDrawerActive(){
+        return this.$store.getters.isDrawerActive;
     }
   },
-  created(){
-
-  },
-  mounted(){
-
-  },
-  methods:{
-
-  },
-
 }
 </script>
 <style lang="scss">

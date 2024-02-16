@@ -28,16 +28,6 @@ export default {
       activeRadio:'Voice',
     }
   },
-  props:[],
-  computed:{
-
-  },
-  created(){
-
-  },
-  mounted(){
-
-  },
   methods:{
     handleRadioChange(params){
       this.activeRadio = params
@@ -46,5 +36,3 @@ export default {
 
 }
 </script>
-<style>
-</style>

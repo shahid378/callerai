@@ -21,7 +21,6 @@ export default {
       createFlag: false
     }
   },
-  props:[],
   computed:{
     updateAppVar(){
       return this.$store.getters.getUpdateAppVar;
@@ -32,12 +31,6 @@ export default {
     updateAppVar(){
       this.createFlag = false
     }
-  },
-  created(){
-
-  },
-  mounted(){
-
   },
   methods:{
     switchEditView(){
@@ -51,5 +44,3 @@ export default {
 
 }
 </script>
-<style>
-</style>

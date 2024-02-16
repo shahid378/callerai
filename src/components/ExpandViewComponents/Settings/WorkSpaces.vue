@@ -54,9 +54,6 @@
 <script>
 export default {
     name: 'WorkSpaces',
-    components: {
-
-    },
     data() {
         return {
             workspaceId: 'q4324523tefgwert5',
@@ -65,20 +62,5 @@ export default {
             userProfile:'Developer'
         }
     },
-    props: [],
-    computed: {
-
-    },
-    created() {
-
-    },
-    mounted() {
-
-    },
-    methods: {
-
-    },
-
 }
 </script>
-<style></style>

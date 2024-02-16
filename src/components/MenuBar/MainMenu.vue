@@ -53,28 +53,13 @@
 <script>
 export default {
     name: 'MainMenu',
-    components: {
-
-    },
-    data() {
-        return {
-
-        }
-    },
-    props: [],
-    computed: {
-
-    },
-    created() {
-
-    },
     mounted() {
         this.handleOpen({index: 'assistants'})
     },
     methods: {
         handleOpen(params){
             params = params.index
-            let expandViewMenuArr= ['assistants', 'apiKeys', 'settings', 'affiliate'];
+            let expandViewMenuArr= ['assistants', 'apiKeys', 'settings', 'affiliate','drawer'];
             if(expandViewMenuArr.indexOf(params)>= 0){                
                 this.$store.dispatch("changeExpandView", params);
             }

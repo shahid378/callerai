@@ -1,5 +1,5 @@
 <template>
-  <div class="h-100">
+  <div refs="settingsPage" class="h-100">
     <el-tabs class="h-100 y-scroller" @tab-click="handleTabChange" :model-value="activeMenu">
       <el-tab-pane label="Workspace" name="workspace">
         <WorkSpaces />
@@ -27,27 +27,16 @@ export default {
   components: {
     WorkSpaces, UserSubscription, UserCredentials, UserNotifications
   },
-  data() {
-    return {
-      activeMenu: 'workspace'
-    }
-  },
-  props: [],
   computed: {
-
-  },
-  created() {
-
-  },
-  mounted() {
-
+    activeMenu(){
+      return this.$store.state.menuStore.activeSettings;
+    }
   },
   methods: {
     handleTabChange(params) {
-      this.activeMenu = params.props.name;
+      this.$store.state.menuStore.activeSettings = params.props.name;
     }
   },
 
 }
 </script>
-<style></style>

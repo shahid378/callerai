@@ -90,16 +90,6 @@
 </template>
 <script>
 export default {
-  name: 'TextPlans',
-  components: {
-    
-  },
-  data(){
-    return{
-
-    }
-  },
-  props:[],
   computed:{
     getMonthlyTextPlanCards(){
       return this.$store.getters.getMonthlyTextPlanCards;
@@ -109,17 +99,5 @@ export default {
     },
 
   },
-  created(){
-
-  },
-  mounted(){
-
-  },
-  methods:{
-
-  },
-
 }
 </script>
-<style>
-</style>

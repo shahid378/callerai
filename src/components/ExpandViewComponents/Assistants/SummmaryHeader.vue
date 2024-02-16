@@ -14,32 +14,15 @@
 <script>
 export default {
   name: 'SummmaryHeader',
-  components: {
-    
-  },
   data(){
     return{
         searchStr: ''
     }
   },
-  props:[],
-  computed:{
-
-  },
-  created(){
-
-  },
-  mounted(){
-
-  },
   methods:{
     switchEditView(params){
       this.$emit('switchEditView',params);
     }
-
   },
-
 }
 </script>
-<style lang="scss">
-</style>

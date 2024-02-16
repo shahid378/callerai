@@ -18,9 +18,6 @@
 <script>
 export default {
     name: 'WorkspaceMenu',
-    components: {
-
-    },
     data() {
         return {
             workspaces:[{
@@ -35,19 +32,6 @@ export default {
             },
         ]
         }
-    },
-    props: [],
-    computed: {
-
-    },
-    created() {
-
-    },
-    mounted() {
-
-    },
-    methods: {
-
     },
 
 }

@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="pd-t-10">            
-                <el-button class="wd-100" icon="Lightning">Upgrade</el-button>
+                <el-button class="wd-100" icon="Lightning" @click="openSettingsPromotion">Upgrade</el-button>
             </div>
         </div>
 
@@ -31,26 +31,11 @@
 <script>
 export default {
     name: 'CreditMenu',
-    components: {
-
-    },
-    data() {
-        return {
-
-        }
-    },
-    props: [],
-    computed: {
-
-    },
-    created() {
-
-    },
-    mounted() {
-
-    },
     methods: {
-
+        openSettingsPromotion(){                
+            this.$store.dispatch("changeExpandView", 'settings');
+      this.$store.state.menuStore.activeSettings = 'subscription';
+        }
     },
 
 }

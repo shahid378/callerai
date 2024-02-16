@@ -45,27 +45,11 @@ export default {
   components: {
     VoicePlans
   },
-  data() {
-    return {
-
-    }
-  },
-  props: [],
-  computed: {
-  },
-  created() {
-
-  },
-  mounted() {
-
-  },
   methods: {
     switchEditView(params) {
       this.$emit('switchEditView', params);
     }
-
   },
-
 }
 </script>
 <style lang="scss">
