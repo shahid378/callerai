@@ -19,7 +19,7 @@
             <div class="m-t-b-5">{{ 'Created On' }}{{ card.assistantCreationDate }}</div>
             <template #footer>
                 <div class="disp-bw">
-                    <el-button type="danger" icon="Delete" circle />
+                    <el-button @click="deleteAssistant(card)" type="danger" icon="Delete" circle />
                     <el-button @click="configureAssistant(card)">Open</el-button>
                 </div>
             </template>
@@ -54,6 +54,15 @@ export default {
         }
     },
     methods: {
+        deleteAssistant(params){
+            let userDB = this.$store.state.userStore.userData;
+            userDB.workspaces.forEach(obj => {
+                if (obj.workspaceName === this.getCurrentWorkspace.workspaceName) {
+                    obj.assistants = obj.assistants.filter(assistant=>assistant.assistantId != params.assistantId)
+                }
+            });            
+            this.$store.dispatch('saveDataInDB');
+        },
         configureAssistant(params){
             params['isNewAssistant'] = false;
             this.$emit('configureAssistant', params);
