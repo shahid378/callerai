@@ -3,22 +3,36 @@
     <div class="h-100">        
         <el-drawer
             v-model="drawerVis"
-            title="I am the title"
             :direction="direction"
             :before-close="handleClose"
         >
-            <span>Hi, there!</span>
+        <template #header>
+          <div v-if="getDrawerName === 'callDrawer'">Make a outbound Call</div>
+        </template>
+          <div v-if="getDrawerName === 'callDrawer'">
+            <CallDrawer/>
+          </div>
         </el-drawer>
     </div>
 </template>
 <script>
+import CallDrawer from './CallDrawer';
 export default {
   name: 'RightDrawerMain',
+  components:{
+    CallDrawer,
+  },
   data(){
     return{
         drawerVis:true,
         direction:'rtl',
+        title:'',
     }
+  },
+  computed:{
+    getDrawerName(){
+      return this.$store.getters.getDrawerName;
+    },
   },
   methods:{
     handleClose(){                

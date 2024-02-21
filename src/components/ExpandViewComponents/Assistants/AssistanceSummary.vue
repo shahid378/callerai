@@ -1,7 +1,7 @@
 <template>
     <div class="h-100">
       <div class="h-100" v-if="createFlag">
-        <EditAssitant @switchEditView="switchEditView"/>
+        <EditAssitant @switchEditView="switchEditView" :assistantObj="assistantObj"/>
       </div>
       <div class="h-100" v-else>
         <SummaryView @configureAssistant="configureAssistant"  @switchEditView="configureAssistant({})"/>
@@ -18,7 +18,8 @@ export default {
   },
   data(){
     return{
-      createFlag: false
+      createFlag: false,
+      assistantObj: {}
     }
   },
   computed:{
@@ -37,8 +38,9 @@ export default {
       this.createFlag = false;
     },
     configureAssistant(params){
+      this.assistantObj = params
       this.createFlag = true;
-      console.log(params)
+      // console.log(params)
     }
   },
 

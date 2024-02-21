@@ -13,7 +13,7 @@
         </div>
       </template>
       <div class="disp-col-wise h-100 y-scroller">
-        <VoicePlans/>
+        <VoicePlans />
       </div>
       <template #footer>
         <div class="disp-bw">
@@ -45,18 +45,50 @@ export default {
   components: {
     VoicePlans
   },
+  computed: {
+    assistantObjData() {
+      return this.$store.state.menuStore.editAssistant
+    },
+    getCurrentWorkspace() {
+      return this.$store.state.menuStore.currentWorkSpace
+    }
+  },
   methods: {
     switchEditView(params) {
+      let userDB = this.$store.state.userStore.userData
+      if (userDB['workspaces'] && userDB['workspaces'].length) {
+        userDB.workspaces.forEach(obj => {
+          if (obj.workspaceName === this.getCurrentWorkspace.workspaceName) {
+            if (this.assistantObjData.isNewAssistant) {
+              if (!obj.assistants) {
+                obj.assistants = []
+              }
+              obj.assistants.push(this.assistantObjData)
+
+            }
+            else {
+              obj.assistants.forEach(assistantObj => {
+                if (assistantObj.assistantId == this.assistantObjData.assistantId) {
+                  assistantObj = { ...assistantObj, ...this.assistantObjData }
+                }
+              })
+            }
+          }
+        })
+      }
       this.$emit('switchEditView', params);
+      if(params === 'assitantsPage'){        
+        this.$store.dispatch('saveDataInDB');
+      }
     }
   },
 }
 </script>
 <style lang="scss">
-.plan-card{
+.plan-card {
   min-width: 21.5 *$base_ten;
   border: 1px solid rgb(13, 13, 63);
   border-radius: 10px;
-  
+
 }
 </style>

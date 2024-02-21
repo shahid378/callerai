@@ -1,6 +1,6 @@
 <template>
-    <div class="assistant-card-container h-92">
-        <el-card class="box-card assistant-card" v-for="card in assistantsCards" :key="card.id">
+    <div v-if="assistantsCards.length > 0" class="assistant-card-container h-92">
+        <el-card  class="box-card assistant-card" v-for="card in assistantsCards" :key="card.id">
             <template #header>
                 <div class="card-header">
                     <div class="disp-bw">
@@ -15,8 +15,8 @@
                 </div>
             </template>
             <div class="m-t-b-5">{{ card.assistantName }}</div>
-            <div  class="m-t-b-5">{{ card.assistantType }}</div>
-            <div  class="m-t-b-5">{{ 'Created ' }}{{ card.assistantCreationDate }}</div>
+            <div class="m-t-b-5">{{ card.assistantType }}</div>
+            <div class="m-t-b-5">{{ 'Created On' }}{{ card.assistantCreationDate }}</div>
             <template #footer>
                 <div class="disp-bw">
                     <el-button type="danger" icon="Delete" circle />
@@ -25,43 +25,37 @@
             </template>
         </el-card>
     </div>
+        <div v-else>
+            No assistant found
+        </div>
 </template>
 <script>
 export default {
     name: 'SummmaryCards',
     computed: {
         assistantsCards() {
-            let assistantArr = [{
-                id: '1',
-                assistantName: 'siri',
-                assistantType: 'Inbound',
-                assistantCreationDate: '06/13/2023'
-            }, {
-                id: '2',
-                assistantName: 'alexa',
-                assistantType: 'outbound',
-                assistantCreationDate: '08/13/2023'
-            }, {
-                id: '3',
-                assistantName: 'alexa',
-                assistantType: 'outbound',
-                assistantCreationDate: '08/13/2023'
-            }, {
-                id: '4',
-                assistantName: 'alexa',
-                assistantType: 'outbound',
-                assistantCreationDate: '08/13/2023'
-            }, {
-                id: '5',
-                assistantName: 'alexa',
-                assistantType: 'outbound',
-                assistantCreationDate: '08/13/2023'
-            }];
-            return assistantArr
+            let userDB = this.$store.state.userStore.userData
+            if(userDB['workspaces'] && userDB['workspaces'].length){
+                let assistants = userDB['workspaces'].map(obj=>{
+                    if(obj.workspaceName === this.getCurrentWorkspace.workspaceName){
+                        return obj.assistants
+                    }
+                })
+                assistants = assistants.filter(Boolean);
+                return assistants[0] == null ? [] : assistants[0];
+            }
+            else return []
+        },
+        workspaceName(){
+            return this.$store.state.userStore.userLoginEmail
+        },
+        getCurrentWorkspace(){
+           return this.$store.state.menuStore.currentWorkSpace
         }
     },
     methods: {
         configureAssistant(params){
+            params['isNewAssistant'] = false;
             this.$emit('configureAssistant', params);
         },        
         openCallFeature(callerId){                

@@ -1,5 +1,8 @@
 export default{
     state:{
+        userData:{},
+
+        
         userWorkspaces:[{
             workspaceID:'',
             workspaceName:'',
@@ -18,7 +21,7 @@ export default{
                     assistantInteractionType:'',
                     assistantCreationDate:'',
                     assistantPic:'',
-                    assitantName:'',
+                    assistantName:'',
                     assistantVoice:'',
                     assistantAIModel:'',
                     assistantVoiceSynth:'',
@@ -56,5 +59,14 @@ export default{
         isEmailNotificationEnabled:false,
         isSMSNotificationEnabled:false,
 
+    },
+    actions:{
+        saveDataInDB({state}){    
+            let userName = state.userLoginEmail;        
+            let localStorage = window.localStorage;
+            let existingLocalStorage = JSON.parse(localStorage.getItem('callerAi'));            
+            existingLocalStorage[userName] = state.userData;
+            localStorage.setItem('callerAi', JSON.stringify(existingLocalStorage)); 
+        }
     }
 }

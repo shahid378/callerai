@@ -63,7 +63,7 @@
             </div>
             <div class="disp-col-wise border">
 
-              <el-input v-model="prompt" :rows="8" type="textarea" placeholder="Please input" />
+              <el-input v-model="assistantObjData.assistantPrompt" :rows="8" type="textarea" placeholder="Please input" />
             </div>
           </div>
         </div>
@@ -93,13 +93,14 @@
 <script>
 export default {
   name: 'EditTwoView',
-  data() {
-    return {
-      prompt: ''
-    }
-  },
+    computed:{
+        assistantObjData(){
+            return this.$store.state.menuStore.editAssistant
+        }
+    },
   methods: {
     switchEditView(params) {
+            this.$store.state.menuStore.editOne = this.assistantObjData;
       this.$emit('switchEditView', params);
     }
   },

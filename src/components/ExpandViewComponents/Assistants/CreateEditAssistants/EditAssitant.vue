@@ -4,7 +4,7 @@
             <EditOneView @switchEditView="switchEditView"/>
         </div>
         <div v-if="editViewsObj.editTwo" class="h-100">
-            <EditTwoView  @switchEditView="switchEditView" />
+            <EditTwoView  @switchEditView="switchEditView"  />
         </div>
         <div v-if="editViewsObj.editThree" class="h-100">
             <EditThreeView  @switchEditView="switchEditView"/>
@@ -17,6 +17,7 @@ import EditTwoView from './EditTwoView';
 import EditThreeView from './EditThreeView';
 export default {
     name: 'EditAssitant',
+    props:['assistantObj'],
     components: {
         EditOneView, EditTwoView, EditThreeView
     },
@@ -29,7 +30,14 @@ export default {
             }
         }
     },
+    mounted(){
+        this.storeAssistant()
+    },
     methods: {
+        storeAssistant(){
+
+            this.$store.state.menuStore.editAssistant = this.assistantObj
+        },
         switchEditView(params){
             this.editViewsObj.editOne=false;
             this.editViewsObj.editTwo=false;

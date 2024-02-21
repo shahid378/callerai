@@ -24,7 +24,22 @@ export default {
         openDrawer:false,
         drawerName:'',
         callerAsistantId:'',
-        activeSettings:''
+        activeSettings:'',
+
+        openApp:false,
+        openLogIn:false,
+        openWorkspacePopup:false,
+        addingNewWorkspace:false,
+        openLoadingAlert:false,
+        
+        currentWorkSpace:{},
+
+        editAssistant:{},
+
+        targetCallerObj:{
+            name:'',
+            number:'',
+        },
     },
     getters:{
         getExpandViewTab(state){
@@ -41,7 +56,10 @@ export default {
         },
         getDrawerName(state){
             return state.drawerName
-        }
+        },
+        getTargetCallerData(state){
+            return state.targetCallerObj
+        },
     },
     mutations:{
         setExpandView(state,params){

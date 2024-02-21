@@ -1,6 +1,6 @@
 <template>
     <div class="h-100">
-        <SummmaryHeader @switchEditView="switchEditView"/>
+        <SummmaryHeader  @configureAssistant="configureAssistant" @switchEditView="switchEditView"/>
         <SummmaryCards @configureAssistant="configureAssistant"/>
     </div>
 </template>

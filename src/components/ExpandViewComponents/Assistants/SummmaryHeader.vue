@@ -22,6 +22,22 @@ export default {
   methods:{
     switchEditView(params){
       this.$emit('switchEditView',params);
+      let assistantObj={
+        isNewAssistant:true
+      }
+      assistantObj['assistantId'] = Math.random();
+      assistantObj['assistantType'] = '';
+      assistantObj['assistantInteractionType'] = '';
+      assistantObj['assistantCreationDate'] = '';
+      assistantObj['assistantName'] = '';
+      assistantObj['assistantVoice'] = '';
+      assistantObj['assistantAIModel'] = '';
+      assistantObj['assistantVoiceSynt'] = '';
+      assistantObj['assistantRegionalLang'] = '';
+      assistantObj['assistantGreeting'] = '';
+      assistantObj['assistantRecordingBackup'] = '';
+      assistantObj['assistantPrompt'] = '';
+      this.$emit('configureAssistant', assistantObj);
     }
   },
 }

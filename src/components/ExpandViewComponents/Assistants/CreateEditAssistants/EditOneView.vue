@@ -36,7 +36,7 @@
                             <div class="font-600">Name</div>
                             <div class="m-t-b-5">What name will your assistant go by</div>
                             <div class="">
-                                <el-input v-model="input" placeholder="Please input" />
+                                <el-input v-model="assistantObjData.assistantName" placeholder="Please input" />
                             </div>
                         </div>
                         <div class="disp-flex w-100 place-end m-l-5">
@@ -44,7 +44,7 @@
                                 <div class="font-600">Select voice</div>
                                 <div class="m-t-b-5">Choose a preset voice or clone your own</div>
                                 <div class="">
-                                    <el-input v-model="input" placeholder="Please input" />
+                                    <el-input v-model="assistantObjData.assistantVoice" placeholder="Please input" />
                                 </div>
                             </div>
                             <div class="disp-flex-bottom">
@@ -62,7 +62,7 @@
                             <div class="font-600">AI Model</div>
                             <div class="m-t-b-5">Opt for speed or depth to suit your assistant's role</div>
                             <div class="">
-                                <el-input v-model="input" placeholder="Please input" />
+                                <el-input v-model="assistantObjData.assistantAIModel" placeholder="Please input" />
                             </div>
                         </div>
                         <div class="disp-flex w-100 place-end m-l-5">
@@ -70,7 +70,7 @@
                                 <div class="font-600">Voice synthesizer</div>
                                 <div class="m-t-b-5">Balance voice quality and response speed</div>
                                 <div class="">
-                                    <el-input v-model="input" placeholder="Please input" />
+                                    <el-input v-model="assistantObjData.assistantVoiceSynt" placeholder="Please input" />
                                 </div>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                             </div>
                             <div class="m-t-b-5">Choose your assistant's language</div>
                             <div class="">
-                                <el-input v-model="input" placeholder="Please input" />
+                                <el-input v-model="assistantObjData.assistantRegionalLang" placeholder="Please input" />
                             </div>
                         </div>
                         <div class="disp-flex w-100 place-end m-l-5">
@@ -90,7 +90,7 @@
                                 <div class="m-t-b-5">The opening line for your assistant’s call
                                 </div>
                                 <div class="">
-                                    <el-input v-model="input" placeholder="Please input" />
+                                    <el-input v-model="assistantObjData.assistantGreeting" placeholder="Please input" />
                                 </div>
                             </div>
                         </div>
@@ -103,7 +103,7 @@
                                 <div class="disp-center m-r-5">
                                     Toggle to record calls for playback and easy review in the logs.
                                 </div>
-                                <div><el-switch v-model="value1" /></div>
+                                <div><el-switch v-model="assistantObjData.assistantRecordingBackup" /></div>
                             </div>
                         </div>
                     </div>
@@ -130,8 +130,18 @@
 <script>
 export default {
     name: 'EditOneView',
+    data(){
+        return{
+        }
+    },
+    computed:{
+        assistantObjData(){
+            return this.$store.state.menuStore.editAssistant
+        }
+    },
     methods: {
         switchEditView(params) {
+            this.$store.state.menuStore.editOne = this.assistantObjData;
             this.$emit('switchEditView', params)
         }
     },
