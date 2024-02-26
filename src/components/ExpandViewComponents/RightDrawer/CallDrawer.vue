@@ -21,9 +21,38 @@ export default {
     getTargetCallerData(){
         return this.$store.getters.getTargetCallerData;
     },
+    getCurrentWorkspace() {
+      return this.$store.state.menuStore.currentWorkSpace;
+    },
+  },
+  mounted(){
   },
   methods:{
-    makeCall(){}
+    getApisData(){  
+      let apiObj = null
+      let userDB = this.$store.state.userStore.userData;
+      if (userDB['workspaces'] && userDB['workspaces'].length) {
+        userDB['workspaces'].forEach(obj => {
+          if (obj.workspaceName === this.getCurrentWorkspace.workspaceName) {
+            apiObj = obj.userSavedApis;
+          }
+        });
+      }
+      return apiObj
+    },
+    makeCall(){  
+        let apisObj = this.getApisData();   
+        let callerObj = this.getTargetCallerData; 
+        let req = {
+          data:{
+            apis : apisObj,
+            caller: callerObj
+          }
+        }
+        this.axios.post('http://127.0.0.1:5000/makecall', req).then((response) => {
+          console.log(response.data)
+        })
+    }
   },
 
 }

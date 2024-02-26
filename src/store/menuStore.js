@@ -23,18 +23,18 @@ export default {
         
         openDrawer:false,
         drawerName:'',
-        callerAsistantId:'',
-        activeSettings:'',
 
         openApp:false,
         openLogIn:false,
         openWorkspacePopup:false,
         addingNewWorkspace:false,
         openLoadingAlert:false,
+        activeSettings:'',
         
         currentWorkSpace:{},
 
         editAssistant:{},
+        callerAsistantId:'',
 
         targetCallerObj:{
             name:'',
@@ -57,6 +57,7 @@ export default {
         getDrawerName(state){
             return state.drawerName
         },
+        
         getTargetCallerData(state){
             return state.targetCallerObj
         },

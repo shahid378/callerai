@@ -60,6 +60,7 @@ export default{
         isSMSNotificationEnabled:false,
 
     },
+    
     actions:{
         saveDataInDB({state}){    
             let userName = state.userLoginEmail;        
