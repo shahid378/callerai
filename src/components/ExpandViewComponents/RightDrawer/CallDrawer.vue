@@ -17,6 +17,11 @@
 <script>
 export default {
   name: 'CallDrawer',
+  data(){
+    return {
+      assistantObj:null,
+    }
+  },
   computed:{
     getTargetCallerData(){
         return this.$store.getters.getTargetCallerData;
@@ -24,12 +29,15 @@ export default {
     getCurrentWorkspace() {
       return this.$store.state.menuStore.currentWorkSpace;
     },
+    getCallerAssistant() {
+      return this.$store.state.menuStore.callerAssistant;
+    },
   },
   mounted(){
   },
   methods:{
     getApisData(){  
-      let apiObj = null
+      let apiObj = null;
       let userDB = this.$store.state.userStore.userData;
       if (userDB['workspaces'] && userDB['workspaces'].length) {
         userDB['workspaces'].forEach(obj => {
@@ -43,11 +51,11 @@ export default {
     makeCall(){  
         let apisObj = this.getApisData();   
         let callerObj = this.getTargetCallerData; 
-        let req = {
-          data:{
-            apis : apisObj,
-            caller: callerObj
-          }
+        let assistantObj =this.getCallerAssistant;
+        let req = {          
+          apis : apisObj,
+            caller: callerObj,
+            assistantObj:assistantObj,
         }
         this.axios.post('http://127.0.0.1:5000/makecall', req).then((response) => {
           console.log(response.data)

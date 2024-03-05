@@ -34,7 +34,7 @@ export default {
         currentWorkSpace:{},
 
         editAssistant:{},
-        callerAsistantId:'',
+        callerAssistant:null,
 
         targetCallerObj:{
             name:'',
@@ -43,7 +43,7 @@ export default {
     },
     getters:{
         getExpandViewTab(state){
-            return state.expandViewTabObj
+            return state.expandViewTabObj;
         },
         getBreadcrumbArr(state){
             return state.breadcrumbArr;
@@ -55,11 +55,14 @@ export default {
             return state.openDrawer;
         },
         getDrawerName(state){
-            return state.drawerName
+            return state.drawerName;
         },
         
         getTargetCallerData(state){
-            return state.targetCallerObj
+            return state.targetCallerObj;
+        },
+        getCallerAssistant(state){
+            return state.callerAssistant;
         },
     },
     mutations:{
@@ -87,14 +90,14 @@ export default {
         },
         openDrawer({state},params){
             if(params.openDrawer){
+                state.callerAssistant = params.callerAssistant;
                 state.openDrawer = true;
                 state.drawerName = params.drawerName;
-                state.callerAsistantId = params.callerAsistantId;
             }
             else{
                 state.openDrawer = false;
                 state.drawerName = '';
-                state.callerAsistantId = '';
+                state.callerAssistant = '';
 
             }
         }

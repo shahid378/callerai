@@ -4,7 +4,7 @@
             <template #header>
                 <div class="card-header">
                     <div class="disp-bw">
-                        <el-button type="primary" icon="PhoneFilled" circle @click="openCallFeature(card.id)" />
+                        <el-button type="primary" icon="PhoneFilled" circle @click="openCallFeature(card)" />
                         <el-button class="button-new-tag" size="small">
                             Voice<el-icon class="el-icon--right">
                                 <Microphone />
@@ -67,8 +67,8 @@ export default {
             params['isNewAssistant'] = false;
             this.$emit('configureAssistant', params);
         },        
-        openCallFeature(callerId){                
-            this.$store.dispatch("openDrawer", {'openDrawer':true,"callerAsistantId":callerId, "drawerName": 'callDrawer'});
+        openCallFeature(assistant){                
+            this.$store.dispatch("openDrawer", {'openDrawer':true,"callerAssistant":assistant, "drawerName": 'callDrawer'});
         }
     },
 
